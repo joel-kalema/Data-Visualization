@@ -1,0 +1,24 @@
+.details-container {
+    display: flex;
+    position: relative;
+    padding: 4rem;
+    margin-right: 4rem;
+}
+
+.details-container img {
+    width: 14rem;
+    border-radius: 1rem;
+}
+
+.circular {
+    background-color: rgba(255, 255, 255, 0.247);
+    text-align: center;
+    width: 150px;
+    padding: 2rem 1rem;
+    margin-left: 2rem;
+    border-radius: 2rem;
+}
+
+.imspection {
+    margin-left: 2rem;
+}
