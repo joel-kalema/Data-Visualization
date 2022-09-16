@@ -1,0 +1,27 @@
+.sources_statistics {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pv,
+.grid,
+.generator {
+    width: 30%;
+    height: 15rem;
+    background-color: rgba(255, 255, 255, 0.13);
+    padding: 1rem;
+}
+
+.energie_level {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.151);
+    box-shadow: 0 0 20px #00000038;
+    padding: 1rem;
+}
+
+.energie_level .level_icon {
+    width: 100px;
+}

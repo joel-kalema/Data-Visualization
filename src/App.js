@@ -5,6 +5,7 @@ import Details from './componets/details';
 import './App.css';
 import Control from './componets/controle';
 import Statistics from './componets/statistics';
+import Details01 from './componets/details01';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/controle' element={ <Control />} />
           <Route path='/statistics' element={ <Statistics /> } />
           <Route path='/machine/:id' element={ <Details /> } />
+          <Route path='/machine01/:id' element={ <Details01 /> } />
         </Routes>
       </Router>
     </div>
