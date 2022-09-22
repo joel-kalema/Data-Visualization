@@ -9,7 +9,7 @@ import '../App.css';
 import { Link } from 'react-router-dom';
 
 function Control() {
-    const percentage = 30;
+    const percentage = 33.3;
   
     let SolarVol= 0;
     let GridVol= 0;
@@ -142,7 +142,7 @@ function Control() {
                   </div>
               </div>
 
-              <form onChange={sheckSource}>
+              <form onChange={sheckSource} className='lines_switch'>
                   <input type="radio" id="grid" name="fav_language" value="grid" />
                   <label for="grid">GRID</label><br />
                   <input type="radio" id="css" name="fav_language" value="solar" />

@@ -389,6 +389,16 @@
   width: 40%;
 }
 
+.lines_switch input {
+  margin-top: 10px;
+  color: chocolate;
+}
+
+.lines_switch label {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
 .wave {
   font-size: 70px;
 }

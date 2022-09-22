@@ -39,7 +39,7 @@ const db = getDatabase(App)
                     <div>
                         <img src='/machine.jpg' alt=''/>
                         <h1>Machine {machines.id}</h1>
-                        <p>{machines.description}</p>
+                        <p className='machine_description'>{machines.description}</p>
                     </div>
                     <div>
                         <div className='circular'>
@@ -50,13 +50,15 @@ const db = getDatabase(App)
                                 styles={buildStyles({
                                 rotation: 1 / 2 + 1 / 8,
                                 textColor: "#fff",
-                                pathColor: "rgb(9, 255, 0)",
+                                pathColor: "darkorange",
                             })}
                             /> 
                             <p>0-230v/60Hz</p>
                         </div>
-                        <FaTemperatureHigh />
-                        <p>Temperature: {machines.temperature}°C</p>
+                        <div className='temp_details'>
+                            <FaTemperatureHigh className='temp_details_icon'/>
+                            <p>Temperature: {machines.temperature}°C</p>
+                        </div>
                     </div>
                     <div>
                         <div className='imspection'>

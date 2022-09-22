@@ -2,7 +2,7 @@ import React from 'react';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { useParams } from 'react-router-dom';
-import { data } from '../datas/machine';
+import { exData } from '../datas/machine';
 import machinesData from '../datas/machine';
 import { ResponsiveBar } from '@nivo/bar'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
@@ -23,7 +23,7 @@ const Details = () => {
                     <div>
                         <img src='/machine.jpg' alt=''/>
                         <h1>Machine {id}</h1>
-                        <p>{mach.description}</p>
+                        <p className='machine_description'>{mach.description}</p>
                     </div>
                     <div>
                         <div className='circular'>
@@ -39,13 +39,15 @@ const Details = () => {
                             /> 
                             <p>0-230v/60Hz</p>
                         </div>
-                        <FaTemperatureHigh />
-                        <p>Temperature: 00</p>
+                        <div className='temp_details'>
+                            <FaTemperatureHigh className='temp_details_icon'/>
+                            <p>Temperature: 0°C</p>
+                        </div>
                     </div>
                     <div>
                         <div className='inspection'>
                             <ResponsiveBar
-                                data={data}
+                                data={ exData }
                                 keys={["degress"]}
                                 indexBy="day"
                                 margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
@@ -68,7 +70,7 @@ const Details = () => {
                             <LineChart
                                 width={500}
                                 height={300}
-                                data={data}
+                                data={ exData }
                                 margin={{
                                     top: 5,
                                     right: 30,
