@@ -10,6 +10,7 @@ import { GiPowerGenerator } from 'react-icons/gi';
 import { FaCarBattery } from 'react-icons/fa';
 import { ImPower } from 'react-icons/im';
 import { GiWaterTank } from 'react-icons/gi';
+import { TbLamp2 } from 'react-icons/tb';
 
 export const icons = [<FcEngineering />,
                       <FcBullish />,
@@ -22,4 +23,5 @@ export const lineIcons = [<GiPowerLightning />,
                           <GiPowerGenerator />,
                           <FaCarBattery />,
                           <ImPower />,
-                          <GiWaterTank />];
+                          <GiWaterTank />,
+                          <TbLamp2 />];

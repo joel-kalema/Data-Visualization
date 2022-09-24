@@ -461,3 +461,39 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.lamps {
+  height: 6rem;
+}
+
+.off {
+  margin-top: 10px;
+  background-color: #000000;
+  padding: 5px 10px;
+  border: none;
+  color: #fff;
+}
+
+.on {
+  margin-top: 10px;
+  background-color: darkorange;
+  padding: 5px 10px;
+  border: none;
+  color: #fff;
+}
+
+.switch_lines .off {
+  margin-top: 10px;
+  background-color: rgb(240, 3, 3);
+  width: 100px;
+  border: none;
+  color: #fff;
+}
+
+.switch_lines  .on {
+  margin-top: 10px;
+  background-color: green;
+  width: 100px;
+  border: none;
+  color: #fff;
+}

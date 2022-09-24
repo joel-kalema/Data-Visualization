@@ -15,6 +15,12 @@
     width: 80%;
 }
 
+.switch_machine {
+    margin-top: 20px;
+    padding: 5px 20px;
+    background-color: chartreuse;
+}
+
 .circular {
     background-color: rgba(255, 255, 255, 0.247);
     text-align: center;
