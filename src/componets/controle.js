@@ -23,7 +23,7 @@ function Control() {
     const App = firebaseApp
     const db = getDatabase(App)
   
-    let SolarVol = 0;
+    let pvVol = 0;
     let GridVol = 0;
     let GenVolt = 0;
 
@@ -79,6 +79,12 @@ function Control() {
         })
     }
 
+    source.generator === 'on' ? GenVolt = 220 : GenVolt = 0
+    source.grid === 'on' ? pvVol = 220 : pvVol = 0
+    source.pv === 'on' ? GridVol = 220 : GridVol = 0
+
+
+
     useEffect(() => {
         onValue(ref(db), snapshot => {
         const data = snapshot.val();
@@ -89,6 +95,10 @@ function Control() {
         }
     })  
     }, [])
+
+    console.log(source.generator)
+    console.log(source.grid)
+    console.log(source.pv)
 
   return (
         <div className="control">
@@ -149,9 +159,9 @@ function Control() {
                     <h6>PV</h6>
                     <div className='percentage jauge_detail'>
                         <CircularProgressbar
-                            value={SolarVol/2.3}
+                            value={pvVol/2.3}
                             circleRatio={0.75}
-                            text={`${SolarVol}v`}
+                            text={`${pvVol}v`}
                             styles={buildStyles({
                                 rotation: 1 / 2 + 1 / 8,
                                 textColor: "#fff",
@@ -212,7 +222,7 @@ function Control() {
                       <div className='machine'>
                         <h3>Motor</h3>
                         <h1>0{item.id}</h1>
-                        <h6>Temperture: 0{item.temperature}°C</h6>
+                        <h6>Temperture: {item.temperature}°C</h6>
                         <h6>Voltage: 0{item.voltage}V</h6>
                         <Link to={`/machine/${item.id}`} >Details</Link>
                       </div>

@@ -463,7 +463,7 @@
 }
 
 .lamps {
-  height: 6rem;
+  height: 7rem;
 }
 
 .off {
@@ -492,7 +492,7 @@
 
 .switch_lines  .on {
   margin-top: 10px;
-  background-color: green;
+  background-color: rgb(9, 255, 0);
   width: 100px;
   border: none;
   color: #fff;
