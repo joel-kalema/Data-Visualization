@@ -17,8 +17,9 @@
 
 .switch_machine {
     margin-top: 20px;
-    padding: 5px 20px;
+    padding: 5px 25px;
     background-color: chartreuse;
+    border: none;
 }
 
 .circular {
