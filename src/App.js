@@ -6,11 +6,13 @@ import './App.css';
 import Control from './componets/controle';
 import Statistics from './componets/statistics';
 import Details01 from './componets/details01';
+import Login from './componets/login';
 
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Login />
+      {/* <Router>
       <Header />
         <Routes>
           <Route path='/' element={ <Home />} />
@@ -19,7 +21,7 @@ function App() {
           <Route path='/machine/:id' element={ <Details /> } />
           <Route path='/machine01/:id' element={ <Details01 /> } />
         </Routes>
-      </Router>
+      </Router> */}
     </div>
   );
 }
