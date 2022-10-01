@@ -9,11 +9,10 @@ function Home() {
         <div className='home_flex'>
             <div className='description'>
                 <h1>Improved Efficiency</h1>
+                <h3>Business transformation made easier.</h3>
                 <p>
                  Multiple areas of your production line will become more
-                 efficient as a result of Industry 4.0-related technologies. 
-                 Some of these efficiencies are mentioned above – less machine 
-                 downtime as well as the ability to make more products and make them faster.
+                 efficient as a result of Industry 4.0.
                 </p>
             </div>
             <div className='hexa'>

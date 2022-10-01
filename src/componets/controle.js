@@ -9,19 +9,19 @@ import '../App.css';
 import { Link } from 'react-router-dom';
 
 function Control() {
-    const percentage = 33.3;
-
     const [machines, setMachines] = useState([])
     const [lamp, setLamps] = useState('')
-
     const [source, setSource] = useState([])
-
+    const [motor, setMotor] = useState([])
     const [generator, setGenerator] = useState('')
     const [grid, setGrid] = useState('')
     const [pv, setPv] = useState('')
 
     const App = firebaseApp
     const db = getDatabase(App)
+
+    let percentage = 0;
+    let numberMotor = 0;
   
     let pvVol = 0;
     let GridVol = 0;
@@ -79,6 +79,9 @@ function Control() {
         })
     }
 
+    motor.switch === 'on' ? percentage = 33.3 : percentage = 0
+    motor.switch === 'on' ? numberMotor = 1 : numberMotor = 0
+
     source.generator === 'on' ? GenVolt = 220 : GenVolt = 0
     source.grid === 'on' ? pvVol = 220 : pvVol = 0
     source.pv === 'on' ? GridVol = 220 : GridVol = 0
@@ -91,20 +94,16 @@ function Control() {
         if (data !== null) {
             setLamps(Object.values(data)[0])
             setMachines(Object.values(data)[1])
+            setMotor(Object.values(data)[2])
             setSource(Object.values(data)[3])
         }
     })  
     }, [])
 
-    console.log(source.generator)
-    console.log(source.grid)
-    console.log(source.pv)
-
   return (
         <div className="control">
             <h1>Controls</h1>
             <div className='controls_lines'>
-
             <div className='control_container'>
                 <div className='control_statistics'>
                     <h5>Machines: </h5>
@@ -129,7 +128,7 @@ function Control() {
                         />
                     </div>
                     <div>
-                        <h1>1/3</h1>
+                        <h1>{numberMotor}/3</h1>
                         <span className='machine_suplyed'>Machines</span>
                     </div>
                 </div>

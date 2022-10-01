@@ -13,12 +13,12 @@ import '../App.css';
 
 const Details01 = () => {
 
-const [machines, setMachines] = useState([]);
-const [motor, setMotor] = useState('');
+    const [machines, setMachines] = useState([]);
+    const [motor, setMotor] = useState('');
 
-const App = firebaseApp
-const db = getDatabase(App)
-let voltage = 0;
+    const App = firebaseApp
+    const db = getDatabase(App)
+    let voltage = 0;
 
     useEffect(() => {
         onValue(ref(db), snapshot => {
