@@ -1,3 +1,4 @@
+.sign_UP,
 .login {
     background-image: linear-gradient(to right,#000d30,#001966);
     color: #fff;
@@ -8,15 +9,22 @@
     align-items: center;
 }
 
+.sign_UP form,
 .login form {
     width: 10%;
     color: rgba(255, 255, 255, 0.671);
 }
 
-.login form label {
-    font-size: 13px;
+.login form h2 {
+    margin-bottom: 20px;
 }
 
+.sign_UP form label,
+.login form label {
+    font-size: 12px;
+}
+
+.sign_UP form input,
 .login form input {
     margin-top: 6px;
     padding: 5px 10px;
