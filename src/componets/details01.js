@@ -71,7 +71,7 @@ const Details01 = () => {
                         </div>
                         <div className='temp_details'>
                             <FaTemperatureHigh className='temp_details_icon'/>
-                            <p>Temperature: {machines.temperature}°C</p>
+                            <p>Temperature: <span>{machines.temperature}°C</span></p>
                         </div>
                     </div>
                     <div>
