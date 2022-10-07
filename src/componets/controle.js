@@ -16,6 +16,7 @@ function Control() {
     const [generator, setGenerator] = useState('')
     const [grid, setGrid] = useState('')
     const [pv, setPv] = useState('')
+    const [offLine, setOffLines] = useState('')
 
     const App = firebaseApp
     const db = getDatabase(App)
@@ -38,7 +39,7 @@ function Control() {
     }
 
     const setPvLine = () => {
-        source.pv === 'off' && source.grid === 'on' && source.generator === 'off' || source.generator === 'on' || source.grid === 'off'?
+        source.pv === 'off' && source.grid === 'on' || source.grid === 'off' && source.generator === 'off' || source.generator === 'on' || source.generator === 'off'?
         set(ref(db, 'source'), {
             grid: 'off',
             generator: 'off',
@@ -52,7 +53,7 @@ function Control() {
     }
 
     const setGridLine = () => {
-        source.grid === 'off' && source.pv === 'on' && source.generator === 'off' || source.generator === 'on' || source.pv === 'on'?
+        source.grid === 'off' && source.pv === 'on'  || source.pv === 'off' && source.generator === 'off' || source.generator === 'on'?
         set(ref(db, 'source'), {
             grid: 'on',
             generator: 'off',
@@ -66,10 +67,24 @@ function Control() {
     }
 
     const setGeneratorLine = () => {
-        source.generator === 'off' && source.grid === 'on' && source.pv === 'off' || source.pv === 'on' || source.grid === 'on'?
+        source.generator === 'off' && source.grid === 'on' || source.grid === 'off' && source.pv === 'off' || source.pv === 'on'?
         set(ref(db, 'source'), {
             grid: 'off',
             generator: 'on',
+            pv: 'off'
+        })
+        : set(ref(db, 'source', 'grid'), {
+            grid: 'off',
+            generator: 'off',
+            pv: 'off'
+        })
+    }
+
+    const setOff = () => {
+        source.generator === 'on' || source.grid === 'on' || source.pv === 'on'?
+        set(ref(db, 'source'), {
+            grid: 'off',
+            generator: 'off',
             pv: 'off'
         })
         : set(ref(db, 'source', 'grid'), {
@@ -86,8 +101,6 @@ function Control() {
     source.grid === 'on' ? pvVol = 220 : pvVol = 0
     source.pv === 'on' ? GridVol = 220 : GridVol = 0
 
-
-
     useEffect(() => {
         onValue(ref(db), snapshot => {
         const data = snapshot.val();
@@ -95,7 +108,7 @@ function Control() {
             setLamps(Object.values(data)[0])
             setMachines(Object.values(data)[1])
             setMotor(Object.values(data)[2])
-            setSource(Object.values(data)[3])
+            setSource(Object.values(data)[4])
         }
     })  
     }, [])
@@ -182,7 +195,7 @@ function Control() {
                             styles={buildStyles({
                                 rotation: 1 / 2 + 1 / 8,
                                 textColor: "#fff",
-                                pathColor: "aqua",
+                                pathColor: "rgb(66, 66, 255)",
                             })}
                         /> 
                         <span>0-230V/50-60Hz</span>
@@ -191,9 +204,10 @@ function Control() {
 
                 <div className='switch_lines'>
                     <h3>Lines</h3>
-                    <button type='button' className= {source.generator} onClick={(event) => { setGenerator(event.target.value); setGeneratorLine()}}>generator</button>< br/>
-                    <button type='button' className= {source.grid} onClick={(event) => { setGrid(event.target.value); setGridLine()}}>grid</button>< br/>
-                    <button type='button' className= {source.pv} onClick={(event) => { setPv(event.target.value); setPvLine()}}>pv</button>
+                    <button type='button' className= {source.generator} onClick={(event) => { setGenerator(event.target.value); setGeneratorLine()}}>GENERATOR</button>< br/>
+                    <button type='button' className= {source.grid} onClick={(event) => { setGrid(event.target.value); setGridLine()}}>GRID</button>< br/>
+                    <button type='button' className= {source.pv} onClick={(event) => { setPv(event.target.value); setPvLine()}}>PV</button>< br/>
+                    <button type='button' className='line_off' onClick={(event) => { setOffLines(event.target.value); setOff()}}>{lineIcons[7]} OFF</button>
                 </div>
 
                 <div className='lamps'>

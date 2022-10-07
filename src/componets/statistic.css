@@ -14,6 +14,11 @@
     height: 10rem;
 }
 
+.grid,
+.generator {
+    margin-left: 3rem;
+}
+
 .energie_statics {
     display: flex;
 }
@@ -42,3 +47,4 @@
     height: 2rem;
     color: #fff;
 }
+

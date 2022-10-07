@@ -37,6 +37,12 @@
     display: flex;
 }
 
+.temp_details p span {
+    padding: 3px 5px;
+    border-radius: 5px;
+    background-color: darkorange;
+}
+
 .temp_details_icon {
     font-size: 22px;
     margin-right: 10px;

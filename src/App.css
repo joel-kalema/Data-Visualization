@@ -489,6 +489,7 @@
 
 .switch_lines .off {
   margin-top: 10px;
+  border-radius: 10px;
   background-color: rgb(240, 3, 3);
   width: 100px;
   border: none;
@@ -497,8 +498,19 @@
 
 .switch_lines  .on {
   margin-top: 10px;
+  border-radius: 10px;
   background-color: rgb(9, 255, 0);
   width: 100px;
   border: none;
+  color: #fff;
+}
+
+.line_off {
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: #000000;
+  width: 100px;
+  border: none;
+  padding: 5px 0;
   color: #fff;
 }
