@@ -13,24 +13,37 @@ import '../App.css';
 
 const Details01 = () => {
 
-const [machines, setMachines] = useState([])
-const [lines, setLines] = useState([])
+    const [machines, setMachines] = useState([]);
+    const [motor, setMotor] = useState('');
 
-const App = firebaseApp
-const db = getDatabase(App)
+    const App = firebaseApp
+    const db = getDatabase(App)
+    let voltage = 0;
 
     useEffect(() => {
         onValue(ref(db), snapshot => {
         const data = snapshot.val();
         if (data !== null) {
-            setLines(Object.values(data)[0])
             setMachines(Object.values(data)[1])
+            setMotor(Object.values(data)[2])
         }
     })
     
     }, [])
 
-    console.log('machine',machines)
+    const setMachine = () => {
+        motor.switch === 'on' ? 
+            set(ref(db, 'motor', 'switch'), {
+                switch: 'off',
+            })
+            : set(ref(db, 'motor', 'switch'), {
+                switch: 'on',
+            });
+    }
+    motor.switch === 'on' ? voltage = 218 : voltage = 0;
+
+
+    console.log('motor',motor)
 
     return(
         <div className="details">
@@ -39,24 +52,27 @@ const db = getDatabase(App)
                     <div>
                         <img src='/machine.jpg' alt=''/>
                         <h1>Machine {machines.id}</h1>
-                        <p>{machines.description}</p>
+                        <p className='machine_description'>This machine, is used to remove bad products</p>
+                        <button type='botton' className='switch_machine' onClick={(event) => { setMotor(event.target.value); setMachine()}}>{motor.switch}</button>
                     </div>
                     <div>
                         <div className='circular'>
                             <CircularProgressbar
-                                value={machines.voltage/2.3}
+                                value={voltage/2.3}
                                 circleRatio={0.75}
-                                text={`${machines.voltage}v`}
+                                text={`${voltage}v`}
                                 styles={buildStyles({
                                 rotation: 1 / 2 + 1 / 8,
                                 textColor: "#fff",
-                                pathColor: "rgb(9, 255, 0)",
+                                pathColor: "darkorange",
                             })}
                             /> 
                             <p>0-230v/60Hz</p>
                         </div>
-                        <FaTemperatureHigh />
-                        <p>Temperature: {machines.temperature}°C</p>
+                        <div className='temp_details'>
+                            <FaTemperatureHigh className='temp_details_icon'/>
+                            <p>Temperature: <span>{machines.temperature}°C</span></p>
+                        </div>
                     </div>
                     <div>
                         <div className='imspection'>

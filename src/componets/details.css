@@ -1,5 +1,6 @@
 .details-container {
     display: flex;
+    justify-content: space-between;
     position: relative;
     padding: 4rem;
     margin-right: 4rem;
@@ -10,13 +11,41 @@
     border-radius: 1rem;
 }
 
+.machine_description {
+    width: 80%;
+}
+
+.switch_machine {
+    margin-top: 20px;
+    padding: 5px 25px;
+    background-color: chartreuse;
+    border: none;
+}
+
 .circular {
     background-color: rgba(255, 255, 255, 0.247);
     text-align: center;
     width: 150px;
     padding: 2rem 1rem;
-    margin-left: 2rem;
     border-radius: 2rem;
+}
+
+.temp_details {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.116);
+    margin-top: 20px;
+    display: flex;
+}
+
+.temp_details p span {
+    padding: 3px 5px;
+    border-radius: 5px;
+    background-color: darkorange;
+}
+
+.temp_details_icon {
+    font-size: 22px;
+    margin-right: 10px;
 }
 
 .inspection {

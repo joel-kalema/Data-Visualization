@@ -14,7 +14,7 @@
   color: rgba(255, 255, 255, 0.808);
   height: 90vh;
   background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.041));
-  width: 6%;
+  width: 5%;
   margin: 1.6rem 1rem;
   padding: 1rem auto;
   border-radius: 2rem;
@@ -62,7 +62,12 @@
 }
 
 .description h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+.description h3 {
+  font-size: 35px;
+  color: darkorange;
 }
 
 .hexa {
@@ -389,6 +394,16 @@
   width: 40%;
 }
 
+.lines_switch input {
+  margin-top: 10px;
+  color: chocolate;
+}
+
+.lines_switch label {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
 .wave {
   font-size: 70px;
 }
@@ -450,4 +465,52 @@
 .machine h3 {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.lamps {
+  height: 7rem;
+}
+
+.off {
+  margin-top: 10px;
+  background-color: #000000;
+  padding: 5px 10px;
+  border: none;
+  color: #fff;
+}
+
+.on {
+  margin-top: 10px;
+  background-color: darkorange;
+  padding: 5px 10px;
+  border: none;
+  color: #fff;
+}
+
+.switch_lines .off {
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: rgb(240, 3, 3);
+  width: 100px;
+  border: none;
+  color: #fff;
+}
+
+.switch_lines  .on {
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: rgb(9, 255, 0);
+  width: 100px;
+  border: none;
+  color: #fff;
+}
+
+.line_off {
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: #000000;
+  width: 100px;
+  border: none;
+  padding: 5px 0;
+  color: #fff;
 }

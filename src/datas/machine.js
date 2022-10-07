@@ -24,46 +24,79 @@ const machinesData = [
 
 export const data = [
     {
-      name: "Page A",
+      name: "Monday",
       time: 4000,
       power: 2400,
       amt: 2400
     },
     {
-      name: "Page B",
+      name: "Tuesday",
       time: 3000,
       power: 1398,
       amt: 2210
     },
     {
-      name: "Page C",
+      name: "Wednesday",
       time: 2000,
       power: 9800,
       amt: 2290
     },
     {
-      name: "Page D",
+      name: "Thursday",
       time: 2780,
       power: 3908,
       amt: 2000
     },
     {
-      name: "Page E",
+      name: "Friday",
       time: 1890,
       power: 4800,
       amt: 2181
     },
     {
-      name: "Page F",
+      name: "Saturday",
       time: 2390,
       power: 3800,
       amt: 2500
+    }
+  ];
+
+  export const exData = [
+    {
+      name: "Monday",
+      time: 0,
+      power: 0,
+      amt: 2400
     },
     {
-      name: "Page G",
-      time: 3490,
-      power: 4300,
-      amt: 2100
+      name: "Tuesday",
+      time: 0,
+      power: 0,
+      amt: 2210
+    },
+    {
+      name: "Wednesday",
+      time: 0,
+      power: 0,
+      amt: 2290
+    },
+    {
+      name: "Thursday",
+      time: 0,
+      power: 0,
+      amt: 2000
+    },
+    {
+      name: "Friday",
+      time: 0,
+      power: 0,
+      amt: 2181
+    },
+    {
+      name: "Saturday",
+      time: 0,
+      power: 0,
+      amt: 2500
     }
   ];
 
