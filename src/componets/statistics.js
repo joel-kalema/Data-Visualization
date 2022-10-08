@@ -8,7 +8,9 @@ import './statistic.css';
 import '../App.css';
 
 const Statistics = () => {
-    const percentage = 23
+    const pvPercentage = 76;
+    const gridPercentage = 23;
+    const generatorPercentage = 43;
   return (
         <div className="statistics">
                 <h1>Statistics</h1>
@@ -22,9 +24,9 @@ const Statistics = () => {
                         <div className='energie_level'>
                             <CircularProgressbar
                                 className='level_icon'
-                                value={percentage}
+                                value={pvPercentage}
                                 circleRatio={0.75}
-                                text={`${percentage}%`}
+                                text={`${pvPercentage}%`}
                                 styles={buildStyles({
                                     rotation: 1 / 2 + 1 / 8,
                                     textColor: "#fff",
@@ -46,9 +48,9 @@ const Statistics = () => {
                         <div className='energie_level'>
                             <CircularProgressbar
                                 className='level_icon'
-                                value={percentage}
+                                value={gridPercentage}
                                 circleRatio={0.75}
-                                text={`${percentage}%`}
+                                text={`${gridPercentage}Kw`}
                                 styles={buildStyles({
                                     rotation: 1 / 2 + 1 / 8,
                                     textColor: "#fff",
@@ -70,9 +72,9 @@ const Statistics = () => {
                         <div className='energie_level'>
                             <CircularProgressbar
                                 className='level_icon'
-                                value={percentage}
+                                value={generatorPercentage}
                                 circleRatio={0.75}
-                                text={`${percentage}%`}
+                                text={`${generatorPercentage}li`}
                                 styles={buildStyles({
                                     rotation: 1 / 2 + 1 / 8,
                                     textColor: "#fff",
@@ -89,7 +91,8 @@ const Statistics = () => {
                 </div>
         
                 <div className='statistic_bar'>
-                <ResponsiveBar
+                    <h4>Motors Statistics</h4>
+                    <ResponsiveBar
                                 data={data} keys={["degress"]} indexBy="day"
                                 margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
                                 padding={0.4}
@@ -125,12 +128,12 @@ const Statistics = () => {
                             <Tooltip />
                             <Legend />
                             <Line
-                              type="monotone"
-                              dataKey="power"
-                              stroke="#8884d8"
-                              activeDot={{ r: 8 }}
+                                type="monotone"
+                                dataKey="power"
+                                stroke="#8884d8"
+                                activeDot={{ r: 8 }}
                             />
-                            <Line type="monotone" dataKey="temperature" stroke="#82ca9d" />
+                            <Line type="monotone" dataKey="Kw/h" stroke="#82ca9d" />
                             </LineChart>
                 </div>
             </div>
