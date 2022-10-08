@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-mixed-operators */
 import React, {useState, useEffect} from 'react';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { firebaseApp } from '../datas/firebase';
@@ -13,10 +15,10 @@ function Control() {
     const [lamp, setLamps] = useState('')
     const [source, setSource] = useState([])
     const [motor, setMotor] = useState([])
-    const [generator, setGenerator] = useState('')
-    const [grid, setGrid] = useState('')
-    const [pv, setPv] = useState('')
-    const [offLine, setOffLines] = useState('')
+    const [setGenerator] = useState('')
+    const [setGrid] = useState('')
+    const [setPv] = useState('')
+    const [ setOffLines] = useState('')
 
     const App = firebaseApp
     const db = getDatabase(App)
@@ -232,7 +234,7 @@ function Control() {
                     </div>
                   {
                     machinesData.map((item) => (
-                      <div className='machine'>
+                      <div className='machine' key={item.id}>
                         <h3>Motor</h3>
                         <h1>0{item.id}</h1>
                         <h6>Temperture: {item.temperature}°C</h6>

@@ -18,8 +18,8 @@ function Home() {
             <div className='hexa'>
             <section className="hex-grid">
 
-                {icons.map((icon) => (
-                    <div ng-repeat="item in app.items" class="grid-item repeat-animation">
+                {icons.map((icon, index) => (
+                    <div ng-repeat="item in app.items" className="grid-item repeat-animation" key={index}>
                     <div className="inner">
                         <div className="inner-inner">
                             <div className="grid-info">
