@@ -130,7 +130,7 @@ const Statistics = () => {
                               stroke="#8884d8"
                               activeDot={{ r: 8 }}
                             />
-                            <Line type="monotone" dataKey="time" stroke="#82ca9d" />
+                            <Line type="monotone" dataKey="temperature" stroke="#82ca9d" />
                             </LineChart>
                 </div>
             </div>
